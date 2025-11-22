@@ -1766,6 +1766,480 @@
             }
         }
     </style>
+<!-- technology -->
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #3b82f6;
+            --accent: #06b6d4;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            background: #ffffff;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .tech-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+        
+        .tech-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tech-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .tech-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        .tech-subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+        
+        .tech-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .tech-visual {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ac-unit {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomIn 1s ease 0.7s forwards;
+        }
+        
+        .ac-display {
+            position: absolute;
+            top: 40px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 180px;
+            height: 80px;
+            background: var(--dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+        
+        .ac-display::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        .ac-vents {
+            position: absolute;
+            bottom: 120px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 220px;
+            height: 40px;
+            background: #94a3b8;
+            border-radius: 8px;
+            display: flex;
+            gap: 8px;
+            padding: 0 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .ac-vent {
+            width: 12px;
+            height: 30px;
+            background: #475569;
+            border-radius: 4px;
+            animation: ventMove 2s infinite ease-in-out;
+        }
+        
+        .ac-vent:nth-child(2) { animation-delay: 0.2s; }
+        .ac-vent:nth-child(3) { animation-delay: 0.4s; }
+        .ac-vent:nth-child(4) { animation-delay: 0.6s; }
+        .ac-vent:nth-child(5) { animation-delay: 0.8s; }
+        
+        .cold-air {
+            position: absolute;
+            bottom: 80px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 200px;
+            height: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .air-particle {
+            width: 6px;
+            height: 6px;
+            background: rgba(14, 165, 233, 0.7);
+            border-radius: 50%;
+            animation: airFlow 3s infinite linear;
+        }
+        
+        .air-particle:nth-child(1) { animation-delay: 0s; }
+        .air-particle:nth-child(2) { animation-delay: 0.3s; }
+        .air-particle:nth-child(3) { animation-delay: 0.6s; }
+        .air-particle:nth-child(4) { animation-delay: 0.9s; }
+        .air-particle:nth-child(5) { animation-delay: 1.2s; }
+        
+        .tech-features {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-right: 4px solid var(--primary);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        
+        .feature-card:nth-child(1) { animation: slideInLeft 0.8s ease 0.9s forwards; }
+        .feature-card:nth-child(2) { animation: slideInLeft 0.8s ease 1.1s forwards; }
+        .feature-card:nth-child(3) { animation: slideInLeft 0.8s ease 1.3s forwards; }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+          
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 15px;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .feature-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .tech-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .stat-card:nth-child(1) { animation: fadeInUp 0.8s ease 1.5s forwards; }
+        .stat-card:nth-child(2) { animation: fadeInUp 0.8s ease 1.7s forwards; }
+        .stat-card:nth-child(3) { animation: fadeInUp 0.8s ease 1.9s forwards; }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 auto 15px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* تأثيرات الحركة */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes ventMove {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.7); }
+        }
+        
+        @keyframes airFlow {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 1024px) {
+            .tech-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .tech-visual {
+                height: 400px;
+            }
+            
+            .ac-unit {
+                width: 250px;
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-title {
+                font-size: 2.5rem;
+            }
+            
+            .tech-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .tech-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .ac-unit {
+                width: 200px;
+                height: 350px;
+            }
+            
+            .ac-display {
+                width: 150px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .feature-card, .stat-card {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-title {
+                font-size: 2rem;
+            }
+            
+            .tech-header {
+                margin-bottom: 50px;
+            }
+            
+            .ac-unit {
+                width: 180px;
+                height: 300px;
+            }
+            
+            .ac-display {
+                width: 120px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .feature-icon, .stat-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.05));
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 70%;
+            right: 80%;
+            animation-delay: 3s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            right: 80%;
+            animation-delay: 6s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -50px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -2643,6 +3117,146 @@ navLinks.forEach(link => {
         observer.observe(aboutSection);
 
        
+    </script>
+      <!-- قسم تكنولوجيا المكيفات -->
+    <section class="tech-hero" id="technology">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="tech-container">
+            <div class="tech-header">
+                <h1 class="tech-title">تكنولوجيا التبريد المتطورة</h1>
+                <p class="tech-subtitle">اكتشف عالمًا جديدًا من الراحة والكفاءة مع أحدث تقنيات التكييف من إيرون كول</p>
+            </div>
+            
+            <div class="tech-content">
+                <div class="tech-visual">
+                    <div class="ac-unit">
+                        <div class="ac-display">
+                            22°C
+                        </div>
+                        <div class="ac-vents">
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
+                        </div>
+                        <div class="cold-air">
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-features">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="feature-title">تكنولوجيا موفرة للطاقة</h3>
+                        </div>
+                        <p class="feature-desc">مكيفات إيرون كول مصممة بتقنيات مبتكرة تخفض استهلاك الطاقة بنسبة تصل إلى 40% مقارنة بالمكيفات التقليدية، مع الحفاظ على نفس مستوى الأداء والتبريد.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h3 class="feature-title">تبريد متجانس وسريع</h3>
+                        </div>
+                        <p class="feature-desc">بتقنية التبريد الذكي، توزع مكيفاتنا الهواء البارد بشكل متجانس في جميع أرجاء الغرفة، مع تحقيق درجة الحرارة المطلوبة في وقت قياسي.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h3 class="feature-title">التحكم الذكي والتقنيات المتقدمة</h3>
+                        </div>
+                        <p class="feature-desc">أنظمة تكييف ذكية قابلة للتحكم عن بعد عبر الهاتف، مع تقنيات تنقية الهواء والتشغيل الهادئ الذي لا يتعدى 19 ديسيبل.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">توفير في الطاقة</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">تبريد أسرع</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">سنوات ضمان</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // تأثيرات إضافية للتفاعل
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تأثيرات تفاعلية للكروت
+            const featureCards = document.querySelectorAll('.feature-card');
+            const statCards = document.querySelectorAll('.stat-card');
+            
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            statCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // تأثيرات للهواء البارد
+            const coldAir = document.querySelector('.cold-air');
+            setInterval(() => {
+                coldAir.style.height = Math.random() * 100 + 50 + 'px';
+            }, 2000);
+            
+            // تغيير درجة الحرارة بشكل عشوائي
+            const acDisplay = document.querySelector('.ac-display');
+            const temperatures = ['18°C', '20°C', '22°C', '24°C', '26°C'];
+            setInterval(() => {
+                const randomTemp = temperatures[Math.floor(Math.random() * temperatures.length)];
+                acDisplay.textContent = randomTemp;
+            }, 5000);
+        });
     </script>
   
 

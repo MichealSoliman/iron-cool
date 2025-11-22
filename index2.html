@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ايرون كول - خدمات التكييف</title>
+    <title>إيرون كول - تكنولوجيا التبريد المتطورة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,33 +16,413 @@
             font-family: 'Cairo', sans-serif;
         }
         
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #3b82f6;
+            --accent: #06b6d4;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
         body {
             background: #ffffff;
-            color: #1e293b;
+            color: var(--dark);
             overflow-x: hidden;
         }
         
-        .services-hero {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        .tech-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 40px 0;
+            padding: 80px 0;
         }
         
-        .hexagon-grid {
+        .tech-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tech-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .tech-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        .tech-subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+        
+        .tech-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .tech-visual {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ac-unit {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomIn 1s ease 0.7s forwards;
+        }
+        
+        .ac-display {
+            position: absolute;
+            top: 40px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 180px;
+            height: 80px;
+            background: var(--dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+        
+        .ac-display::before {
+            content: '';
             position: absolute;
             top: 0;
             right: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.03;
-            background: 
-                radial-gradient(circle at 20% 30%, #0ea5e9 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, #3b82f6 0%, transparent 50%);
+            background: linear-gradient(45deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        .ac-vents {
+            position: absolute;
+            bottom: 120px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 220px;
+            height: 40px;
+            background: #94a3b8;
+            border-radius: 8px;
+            display: flex;
+            gap: 8px;
+            padding: 0 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .ac-vent {
+            width: 12px;
+            height: 30px;
+            background: #475569;
+            border-radius: 4px;
+            animation: ventMove 2s infinite ease-in-out;
+        }
+        
+        .ac-vent:nth-child(2) { animation-delay: 0.2s; }
+        .ac-vent:nth-child(3) { animation-delay: 0.4s; }
+        .ac-vent:nth-child(4) { animation-delay: 0.6s; }
+        .ac-vent:nth-child(5) { animation-delay: 0.8s; }
+        
+        .cold-air {
+            position: absolute;
+            bottom: 80px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 200px;
+            height: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .air-particle {
+            width: 6px;
+            height: 6px;
+            background: rgba(14, 165, 233, 0.7);
+            border-radius: 50%;
+            animation: airFlow 3s infinite linear;
+        }
+        
+        .air-particle:nth-child(1) { animation-delay: 0s; }
+        .air-particle:nth-child(2) { animation-delay: 0.3s; }
+        .air-particle:nth-child(3) { animation-delay: 0.6s; }
+        .air-particle:nth-child(4) { animation-delay: 0.9s; }
+        .air-particle:nth-child(5) { animation-delay: 1.2s; }
+        
+        .tech-features {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-right: 4px solid var(--primary);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        
+        .feature-card:nth-child(1) { animation: slideInLeft 0.8s ease 0.9s forwards; }
+        .feature-card:nth-child(2) { animation: slideInLeft 0.8s ease 1.1s forwards; }
+        .feature-card:nth-child(3) { animation: slideInLeft 0.8s ease 1.3s forwards; }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 15px;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .feature-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .tech-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .stat-card:nth-child(1) { animation: fadeInUp 0.8s ease 1.5s forwards; }
+        .stat-card:nth-child(2) { animation: fadeInUp 0.8s ease 1.7s forwards; }
+        .stat-card:nth-child(3) { animation: fadeInUp 0.8s ease 1.9s forwards; }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 auto 15px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* تأثيرات الحركة */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes ventMove {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.7); }
+        }
+        
+        @keyframes airFlow {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) scale(0.5);
+                opacity: 0;
+            }
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 1024px) {
+            .tech-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .tech-visual {
+                height: 400px;
+            }
+            
+            .ac-unit {
+                width: 250px;
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-title {
+                font-size: 2.5rem;
+            }
+            
+            .tech-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .tech-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .ac-unit {
+                width: 200px;
+                height: 350px;
+            }
+            
+            .ac-display {
+                width: 150px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .feature-card, .stat-card {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-title {
+                font-size: 2rem;
+            }
+            
+            .tech-header {
+                margin-bottom: 50px;
+            }
+            
+            .ac-unit {
+                width: 180px;
+                height: 300px;
+            }
+            
+            .ac-display {
+                width: 120px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .feature-icon, .stat-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
         }
         
         .floating-elements {
@@ -52,6 +432,7 @@
             top: 0;
             right: 0;
             pointer-events: none;
+            z-index: 1;
         }
         
         .floating-element {
@@ -85,384 +466,6 @@
             animation-delay: 6s;
         }
         
-        .floating-element:nth-child(4) {
-            width: 120px;
-            height: 120px;
-            top: 80%;
-            right: 20%;
-            animation-delay: 9s;
-        }
-        
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .services-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #0ea5e9, #3b82f6, #1d4ed8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 0.2s forwards;
-        }
-        
-        .services-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #64748b;
-            margin-bottom: 60px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 0.4s forwards;
-        }
-        
-        .services-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .services-row {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            width: 100%;
-            max-width: 900px;
-        }
-        
-        .central-service {
-            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            max-width: 300px;
-            margin: 0 auto 40px;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: zoomIn 1s ease 0.6s forwards;
-        }
-        
-        .central-service::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .central-service:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4);
-        }
-        
-        .central-service:hover::before {
-            opacity: 1;
-        }
-        
-        .central-icon {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .central-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #f1f5f9;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            opacity: 0;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(59, 130, 246, 0.02));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .service-card:hover::before {
-            opacity: 1;
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            color: white;
-            position: relative;
-            z-index: 2;
-            transition: all 0.4s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .service-card:nth-child(1) .service-icon {
-            background: linear-gradient(135deg, #0ea5e9, #38bdf8);
-        }
-        
-        .service-card:nth-child(2) .service-icon {
-            background: linear-gradient(135deg, #10b981, #34d399);
-        }
-        
-        .service-card:nth-child(3) .service-icon {
-            background: linear-gradient(135deg, #f59e0b, #fbbf24);
-        }
-        
-        .service-card:nth-child(4) .service-icon {
-            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-        }
-        
-        .service-card:nth-child(5) .service-icon {
-            background: linear-gradient(135deg, #ef4444, #f87171);
-        }
-        
-        .service-card:nth-child(6) .service-icon {
-            background: linear-gradient(135deg, #06b6d4, #22d3ee);
-        }
-        
-        .service-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #1e293b;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .service-desc {
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .card-arrow {
-            color: #3b82f6;
-            font-size: 1.2rem;
-            align-self: flex-start;
-            position: relative;
-            z-index: 2;
-            animation: arrowMove 1.5s infinite ease-in-out;
-        }
-        
-        .service-card:hover .card-arrow {
-            animation: arrowMoveHover 0.8s infinite ease-in-out;
-        }
-        
-        .service-detail-panel {
-            position: fixed;
-            top: 50%;
-            right: 50%;
-            transform: translate(50%, -50%) scale(0);
-            width: 90%;
-            max-width: 800px;
-            background: rgba(10, 15, 30, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 40px;
-            z-index: 100;
-            opacity: 0;
-            transition: all 0.5s ease;
-            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(0, 180, 216, 0.3);
-        }
-        
-        .service-detail-panel.active {
-            transform: translate(50%, -50%) scale(1);
-            opacity: 1;
-        }
-        
-        .panel-close {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: none;
-            border: none;
-            color: #00b4d8;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .panel-close:hover {
-            color: #90e0ef;
-            transform: rotate(90deg);
-        }
-        
-        .panel-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .panel-image {
-            width: 100%;
-            height: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        
-        .panel-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .panel-image:hover img {
-            transform: scale(1.1);
-        }
-        
-        .panel-info h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #00b4d8;
-        }
-        
-        .panel-info p {
-            color: #cbd5e0;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        
-        .panel-features {
-            margin-bottom: 30px;
-        }
-        
-        .panel-features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            color: #cbd5e0;
-        }
-        
-        .panel-features li i {
-            color: #00b4d8;
-            margin-left: 10px;
-        }
-        
-        .panel-actions {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .action-btn {
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-        
-        .btn-call {
-            background: linear-gradient(135deg, #00b4d8, #0077b6);
-            color: white;
-        }
-        
-        .btn-call:hover {
-            background: linear-gradient(135deg, #0077b6, #00b4d8);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4);
-        }
-        
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-        }
-        
-        .btn-whatsapp:hover {
-            background: linear-gradient(135deg, #128C7E, #25D366);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* تأثيرات الحركة */
         @keyframes float {
             0% {
                 transform: translate(0, 0) rotate(0deg);
@@ -477,434 +480,148 @@
                 transform: translate(0, 0) rotate(360deg);
             }
         }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes zoomIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes slideInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            70% {
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes arrowMove {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(-5px);
-            }
-        }
-        
-        @keyframes arrowMoveHover {
-            0%, 100% {
-                transform: translateX(-5px);
-            }
-            50% {
-                transform: translateX(-10px);
-            }
-        }
-        
-        /* تأثيرات الظهور المختلفة للكروت */
-        .service-card.card-1 {
-            transform: translateX(-50px);
-            animation: slideInRight 0.8s ease forwards;
-            animation-delay: 0.8s;
-        }
-        
-        .service-card.card-2 {
-            transform: translateX(50px);
-            animation: slideInLeft 0.8s ease forwards;
-            animation-delay: 1s;
-        }
-        
-        .service-card.card-3 {
-            transform: translateY(50px);
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 1.2s;
-        }
-        
-        .service-card.card-4 {
-            transform: translateY(-50px);
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 1.4s;
-        }
-        
-        .service-card.card-5 {
-            transform: scale(0.5);
-            animation: bounceIn 0.8s ease forwards;
-            animation-delay: 1.6s;
-        }
-        
-        .service-card.card-6 {
-            transform: rotate(10deg) scale(0.8);
-            animation: zoomIn 0.8s ease forwards;
-            animation-delay: 1.8s;
-        }
-        
-        /* تصميم متجاوب */
-        @media (max-width: 768px) {
-            .services-title {
-                font-size: 2.2rem;
-            }
-            
-            .services-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 40px;
-            }
-            
-            .services-row {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .central-service {
-                padding: 30px;
-                max-width: 250px;
-            }
-            
-            .central-icon {
-                font-size: 2.8rem;
-            }
-            
-            .central-title {
-                font-size: 1.3rem;
-            }
-            
-            .service-card {
-                padding: 25px;
-            }
-            
-            .panel-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .panel-image {
-                height: 200px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .services-title {
-                font-size: 1.8rem;
-            }
-            
-            .services-container {
-                padding: 15px;
-            }
-            
-            .service-card {
-                padding: 20px;
-            }
-            
-            .service-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .service-name {
-                font-size: 1.2rem;
-            }
-            
-            .panel-info h3 {
-                font-size: 1.6rem;
-            }
-            
-            .panel-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .action-btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- قسم الخدمات -->
-    <section class="services-hero" id="services">
-        <div class="hexagon-grid"></div>
+    <!-- قسم تكنولوجيا المكيفات -->
+    <section class="tech-hero" id="technology">
         <div class="floating-elements">
             <div class="floating-element"></div>
             <div class="floating-element"></div>
             <div class="floating-element"></div>
-            <div class="floating-element"></div>
         </div>
         
-        <div class="services-container">
-            <h1 class="services-title">خدماتنا المتكاملة</h1>
-            <p class="services-subtitle">اكتشف عالم خدمات التكييف المتكاملة من شركة إيرون كول. اختر الخدمة لمعرفة التفاصيل الكاملة</p>
+        <div class="tech-container">
+            <div class="tech-header">
+                <h1 class="tech-title">تكنولوجيا التبريد المتطورة</h1>
+                <p class="tech-subtitle">اكتشف عالمًا جديدًا من الراحة والكفاءة مع أحدث تقنيات التكييف من إيرون كول</p>
+            </div>
             
-            <div class="services-grid">
-                <!-- الصف الأول من الخدمات -->
-                <div class="services-row">
-                    <div class="service-card card-1" onclick="openService('maintenance')">
-                        <div class="service-icon">
-                            <i class="fas fa-tools"></i>
+            <div class="tech-content">
+                <div class="tech-visual">
+                    <div class="ac-unit">
+                        <div class="ac-display">
+                            22°C
                         </div>
-                        <h3 class="service-name">الصيانة الدورية</h3>
-                        <p class="service-desc">ضمان كفاءة وأداء مثالي لأنظمة التكييف مع صيانة دورية شاملة</p>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-left"></i>
+                        <div class="ac-vents">
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
+                            <div class="ac-vent"></div>
                         </div>
-                    </div>
-                    
-                    <div class="service-card card-2" onclick="openService('repair')">
-                        <div class="service-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="service-name">إصلاح الأعطال</h3>
-                        <p class="service-desc">حلول سريعة واحترافية لإصلاح جميع أنواع الأعطال في أنظمة التكييف</p>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-left"></i>
+                        <div class="cold-air">
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
+                            <div class="air-particle"></div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- الخدمة المركزية -->
-                <div class="central-service" onclick="openService('central')">
-                    <div class="central-icon">❄</div>
-                    <div class="central-title">ايرون كول</div>
-                </div>
-                
-                <!-- الصف الثاني من الخدمات -->
-                <div class="services-row">
-                    <div class="service-card card-3" onclick="openService('installation')">
-                        <div class="service-icon">
-                            <i class="fas fa-snowflake"></i>
+                <div class="tech-features">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="feature-title">تكنولوجيا موفرة للطاقة</h3>
                         </div>
-                        <h3 class="service-name">تركيب المكيفات</h3>
-                        <p class="service-desc">تركيب دقيق واحترافي لأنظمة التكييف المختلفة وفق أعلى المعايير</p>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-left"></i>
-                        </div>
+                        <p class="feature-desc">مكيفات إيرون كول مصممة بتقنيات مبتكرة تخفض استهلاك الطاقة بنسبة تصل إلى 40% مقارنة بالمكيفات التقليدية، مع الحفاظ على نفس مستوى الأداء والتبريد.</p>
                     </div>
                     
-                    <div class="service-card card-4" onclick="openService('emergency')">
-                        <div class="service-icon">
-                            <i class="fas fa-clock"></i>
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h3 class="feature-title">تبريد متجانس وسريع</h3>
                         </div>
-                        <h3 class="service-name">خدمات الطوارئ</h3>
-                        <p class="service-desc">خدمة 24/7 على مدار الساعة لمعالجة الأعطال المفاجئة في أي وقت</p>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-left"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- الصف الثالث من الخدمات -->
-                <div class="services-row">
-                    <div class="service-card card-5" onclick="openService('cleaning')">
-                        <div class="service-icon">
-                            <i class="fas fa-spray-can"></i>
-                        </div>
-                        <h3 class="service-name">تنظيف المكيفات</h3>
-                        <p class="service-desc">تنظيف عميق وتعقيم شامل للمكيفات لتحسين جودة الهواء والكفاءة</p>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-left"></i>
-                        </div>
+                        <p class="feature-desc">بتقنية التبريد الذكي، توزع مكيفاتنا الهواء البارد بشكل متجانس في جميع أرجاء الغرفة، مع تحقيق درجة الحرارة المطلوبة في وقت قياسي.</p>
                     </div>
                     
-                    <div class="service-card card-6" onclick="openService('consultation')">
-                        <div class="service-icon">
-                            <i class="fas fa-user-cog"></i>
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h3 class="feature-title">التحكم الذكي والتقنيات المتقدمة</h3>
                         </div>
-                        <h3 class="service-name">استشارات فنية</h3>
-                        <p class="service-desc">حلول مخصصة واحترافية لاختيار أنظمة التكييف المناسبة لاحتياجاتك</p>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-left"></i>
-                        </div>
+                        <p class="feature-desc">أنظمة تكييف ذكية قابلة للتحكم عن بعد عبر الهاتف، مع تقنيات تنقية الهواء والتشغيل الهادئ الذي لا يتعدى 19 ديسيبل.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- لوحة تفاصيل الخدمة -->
-        <div class="service-detail-panel" id="servicePanel">
-            <button class="panel-close" onclick="closeService()">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="panel-content">
-                <div class="panel-image">
-                    <img id="panelImage" src="https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="خدمة">
-                </div>
-                <div class="panel-info">
-                    <h3 id="panelTitle">الصيانة الدورية</h3>
-                    <p id="panelDescription">خدمات صيانة دورية شاملة للمكيفات لضمان كفاءة التشغيل وتقليل استهلاك الطاقة وإطالة العمر الافتراضي للمكيف.</p>
-                    <ul class="panel-features" id="panelFeatures">
-                        <li><i class="fas fa-check"></i> تنظيف الفلاتر والمبادلات الحرارية</li>
-                        <li><i class="fas fa-check"></i> فحص الضغط وكمية الفريون</li>
-                        <li><i class="fas fa-check"></i> تشحيم الأجزاء المتحركة</li>
-                        <li><i class="fas fa-check"></i> فحص الدوائر الكهربائية</li>
-                    </ul>
-                    <div class="panel-actions">
-                        <a href="tel:+966500000000" class="action-btn btn-call">
-                            <i class="fas fa-phone"></i> اتصل بنا
-                        </a>
-                        <a href="https://wa.me/966500000000" class="action-btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> واتساب
-                        </a>
+            
+            <div class="tech-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">توفير في الطاقة</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">تبريد أسرع</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">سنوات ضمان</div>
                 </div>
             </div>
         </div>
-        
-        <!-- طبقة التعتيم -->
-        <div class="overlay" id="overlay"></div>
     </section>
 
     <script>
-        // بيانات الخدمات
-        const services = {
-            central: {
-                title: "ايرون كول - خدمات التكييف",
-                description: "شركة رائدة في تقديم خدمات التكييف في الرياض. نلتزم بتقديم أعلى مستويات الجودة والاحترافية لضمان راحة عملائنا في جميع الأوقات. نحن نقدم حلولاً متكاملة لأنظمة التكييف والتبريد.",
-                image: "https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "خدمات متكاملة لأنظمة التكييف",
-                    "فريق فني متخصص ومدرب",
-                    "أعلى معايير الجودة والاحترافية",
-                    "خدمة عملاء على مدار الساعة"
-                ]
-            },
-            maintenance: {
-                title: "الصيانة الدورية",
-                description: "خدمات صيانة دورية شاملة للمكيفات لضمان كفاءة التشغيل وتقليل استهلاك الطاقة وإطالة العمر الافتراضي للمكيف. نستخدم أحدث التقنيات وقطع الغيار الأصلية.",
-                image: "https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "تنظيف الفلاتر والمبادلات الحرارية",
-                    "فحص الضغط وكمية الفريون",
-                    "تشحيم الأجزاء المتحركة",
-                    "فحص الدوائر الكهربائية"
-                ]
-            },
-            repair: {
-                title: "إصلاح الأعطال",
-                description: "تشخيص وإصلاح جميع أنواع الأعطال في أنظمة التكييف باستخدام أحدث الأجهزة والتقنيات وقطع الغيار الأصلية. نحن نضمن إصلاحاً فعالاً ودائماً.",
-                image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "إصلاح الأعطال الكهربائية",
-                    "معالجة تسريب الفريون",
-                    "إصلاح الضواصم والكمبروسر",
-                    "استبدال القطع التالفة"
-                ]
-            },
-            installation: {
-                title: "تركيب المكيفات",
-                description: "خدمات تركيب احترافية لأنظمة التكييف المختلفة مع ضمان التثبيت الأمثل والآمن وفق المعايير الفنية العالمية. نضمن أداءً مثالياً وكفاءة عالية.",
-                image: "https://images.unsplash.com/photo-1581578021554-7c35fe8cdd0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "تركيب مكيفات سبليت ومركزية",
-                    "تخطيط وتصميم أنظمة التكييف",
-                    "تركيب أنظمة التحكم الذكية",
-                    "ضمان التركيب لمدة عام"
-                ]
-            },
-            emergency: {
-                title: "خدمات الطوارئ",
-                description: "خدمات طوارئ على مدار الساعة لمعالجة الأعطال المفاجئة في أي وقت، مع وصول سريع لضمان راحتكم في الأوقات الحرجة. فريقنا جاهز دائماً لمساعدتكم.",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "استجابة سريعة خلال 60 دقيقة",
-                    "خدمة 24/7 على مدار الأسبوع",
-                    "فريق طوارئ متخصص ومجهز",
-                    "حلول فورية للأعطال الطارئة"
-                ]
-            },
-            cleaning: {
-                title: "تنظيف المكيفات",
-                description: "خدمات تنظيف شاملة للمكيفات لإزالة الأتربة والعوالق وتحسين جودة الهواء وزيادة كفاءة الجهاز وتقليل استهلاك الطاقة. نستخدم مواد تنظيف آمنة وفعالة.",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "تنظيف عميق للمبادلات الحرارية",
-                    "تعقيم وتطهير القنوات",
-                    "تنظيف الفلاتر والمرشحات",
-                    "إزالة الروائح الكريهة"
-                ]
-            },
-            consultation: {
-                title: "استشارات فنية",
-                description: "تقديم استشارات فنية متخصصة لاختيار أنظمة التكييف المناسبة وتصميم الحلول المثلى لتلبية احتياجاتكم بتكلفة مناسبة. خبراؤنا جاهزون لتقديم النصح والإرشاد.",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "دراسة احتياجات التبريد",
-                    "تقديم حلول موفرة للطاقة",
-                    "تصميم أنظمة التكييف المركزية",
-                    "استشارات التحديث والتطوير"
-                ]
-            }
-        };
-
-        // فتح لوحة الخدمة
-        function openService(serviceId) {
-            const service = services[serviceId];
-            document.getElementById('panelTitle').textContent = service.title;
-            document.getElementById('panelDescription').textContent = service.description;
-            document.getElementById('panelImage').src = service.image;
+        // تأثيرات إضافية للتفاعل
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تأثيرات تفاعلية للكروت
+            const featureCards = document.querySelectorAll('.feature-card');
+            const statCards = document.querySelectorAll('.stat-card');
             
-            const featuresList = document.getElementById('panelFeatures');
-            featuresList.innerHTML = '';
-            service.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
-                featuresList.appendChild(li);
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
             });
             
-            document.getElementById('servicePanel').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        // إغلاق لوحة الخدمة
-        function closeService() {
-            document.getElementById('servicePanel').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // إغلاق اللوحة عند النقر على التعتيم
-        document.getElementById('overlay').addEventListener('click', closeService);
+            statCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // تأثيرات للهواء البارد
+            const coldAir = document.querySelector('.cold-air');
+            setInterval(() => {
+                coldAir.style.height = Math.random() * 100 + 50 + 'px';
+            }, 2000);
+            
+            // تغيير درجة الحرارة بشكل عشوائي
+            const acDisplay = document.querySelector('.ac-display');
+            const temperatures = ['18°C', '20°C', '22°C', '24°C', '26°C'];
+            setInterval(() => {
+                const randomTemp = temperatures[Math.floor(Math.random() * temperatures.length)];
+                acDisplay.textContent = randomTemp;
+            }, 5000);
+        });
     </script>
 </body>
 </html>
