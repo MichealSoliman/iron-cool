@@ -9,7 +9,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./asstes/css/style.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -17,7 +18,7 @@
 
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="asstes/css/style.css">
+    
     <!-- why-us -->
      <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
@@ -43,7 +44,7 @@
             border-radius: 2px;
         }
         
-        .image-container {
+        .image-container-1 {
             position: relative;
             overflow: hidden;
             border-radius: 20px;
@@ -545,63 +546,10 @@
         }
     </style>
     <!-- about -->
-      <style>
+  <style>
         body {
             font-family: 'Tajawal', sans-serif;
-            background-color: #f8fafc;
-        }
-        
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .fade-in-left {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .fade-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .fade-in-right {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .floating {
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translate(0, 0px); }
-            50% { transform: translate(0, -15px); }
-            100% { transform: translate(0, 0px); }
-        }
-        
-        .pulse-icon {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+          
         }
         
         .gradient-text {
@@ -610,13 +558,51 @@
             -webkit-text-fill-color: transparent;
         }
         
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .card-hover {
             transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-hover:hover .card-arrow {
+            transform: translateX(-5px);
+            opacity: 1;
+        }
+        
+        .card-arrow {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            color: #3b82f6;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -10px); }
+            100% { transform: translate(0, 0px); }
         }
         
         .icon-container {
@@ -624,7 +610,7 @@
         }
         
         .icon-container:hover {
-            transform: rotateY(180deg);
+            transform: scale(1.1);
         }
         
         .timeline-item {
@@ -638,8 +624,8 @@
             right: 0;
             top: 0;
             bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #3b82f6, #60a5fa);
+            width: 3px;
+            background: linear-gradient(to bottom, #3b82f6, #93c5fd);
             border-radius: 10px;
         }
         
@@ -648,12 +634,22 @@
             position: absolute;
             right: -8px;
             top: 0;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: #3b82f6;
-            border: 4px solid #fff;
-            box-shadow: 0 0 0 4px #dbeafe;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #dbeafe;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-left: 4px solid #3b82f6;
         }
     </style>
     <!-- footer -->
@@ -662,7 +658,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
+            
         }
         
         body {
@@ -766,7 +762,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            animation: float 6s ease-in-out infinite;
+            
         }
         
         .footer-logo i {
@@ -1115,6 +1111,7 @@
                 transform: translateY(100vh) rotate(360deg);
             }
         }
+        
     </style>
     <!-- services -->
       <style>
@@ -1126,19 +1123,20 @@
         }
         
         body {
-            background: #0a0f1e;
-            color: #fff;
+            background: #ffffff;
+            color: #1e293b;
             overflow-x: hidden;
         }
         
         .services-hero {
-            background: linear-gradient(135deg, #0a0f1e 0%, #1a2a3a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            padding: 40px 0;
         }
         
         .hexagon-grid {
@@ -1147,168 +1145,274 @@
             right: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.1;
+            opacity: 0.03;
             background: 
-                radial-gradient(circle at 20% 30%, #00b4d8 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, #0077b6 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, #0ea5e9 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, #3b82f6 0%, transparent 50%);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.05));
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 70%;
+            right: 80%;
+            animation-delay: 3s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            right: 80%;
+            animation-delay: 6s;
+        }
+        
+        .floating-element:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 80%;
+            right: 20%;
+            animation-delay: 9s;
         }
         
         .services-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
             position: relative;
             z-index: 2;
         }
         
         .services-title {
             text-align: center;
-            font-size: 4rem;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #00b4d8, #0077b6, #90e0ef);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6, #1d4ed8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 800;
-            text-shadow: 0 0 30px rgba(0, 180, 216, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.2s forwards;
         }
         
         .services-subtitle {
             text-align: center;
-            font-size: 1.3rem;
-            color: #cbd5e0;
-            margin-bottom: 80px;
-            max-width: 600px;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 60px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.6;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.4s forwards;
         }
         
-        .services-orbital {
-            position: relative;
-            width: 800px;
-            height: 800px;
-            margin: 0 auto;
+        .services-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .services-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            width: 100%;
+            max-width: 900px;
         }
         
         .central-service {
-            position: absolute;
-            top: 50%;
-            right: 50%;
-            transform: translate(50%, -50%);
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #00b4d8, #0077b6);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 0 50px rgba(0, 180, 216, 0.5);
+            color: white;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+            transition: all 0.4s ease;
             cursor: pointer;
-            transition: all 0.5s ease;
-            z-index: 10;
+            max-width: 300px;
+            margin: 0 auto 40px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomIn 1s ease 0.6s forwards;
+        }
+        
+        .central-service::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
         
         .central-service:hover {
-            transform: translate(50%, -50%) scale(1.1);
-            box-shadow: 0 0 80px rgba(0, 180, 216, 0.8);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4);
+        }
+        
+        .central-service:hover::before {
+            opacity: 1;
         }
         
         .central-icon {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
         }
         
         .central-title {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
         }
         
-        .orbital-service {
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transform-origin: center;
-            animation: float 6s ease-in-out infinite;
+            height: 100%;
+            opacity: 0;
         }
         
-        .orbital-service:nth-child(2) { top: 10%; right: 30%; animation-delay: 0s; }
-        .orbital-service:nth-child(3) { top: 25%; right: 10%; animation-delay: 1s; }
-        .orbital-service:nth-child(4) { top: 50%; right: 5%; animation-delay: 2s; }
-        .orbital-service:nth-child(5) { top: 75%; right: 10%; animation-delay: 3s; }
-        .orbital-service:nth-child(6) { top: 90%; right: 30%; animation-delay: 4s; }
-        .orbital-service:nth-child(7) { top: 75%; left: 10%; animation-delay: 5s; }
-        .orbital-service:nth-child(8) { top: 50%; left: 5%; animation-delay: 6s; }
-        .orbital-service:nth-child(9) { top: 25%; left: 10%; animation-delay: 7s; }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(59, 130, 246, 0.02));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
         
-        .orbital-service:hover {
-            background: rgba(0, 180, 216, 0.2);
-            transform: scale(1.2) rotate(5deg);
-            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.4);
-            z-index: 20;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
         }
         
         .service-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #00b4d8;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-card:nth-child(1) .service-icon {
+            background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+        }
+        
+        .service-card:nth-child(2) .service-icon {
+            background: linear-gradient(135deg, #10b981, #34d399);
+        }
+        
+        .service-card:nth-child(3) .service-icon {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        }
+        
+        .service-card:nth-child(4) .service-icon {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+        }
+        
+        .service-card:nth-child(5) .service-icon {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+        }
+        
+        .service-card:nth-child(6) .service-icon {
+            background: linear-gradient(135deg, #06b6d4, #22d3ee);
         }
         
         .service-name {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 5px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1e293b;
+            position: relative;
+            z-index: 2;
         }
         
         .service-desc {
-            font-size: 0.7rem;
-            color: #cbd5e0;
-            display: none;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            position: relative;
+            z-index: 2;
         }
         
-        .orbital-service:hover .service-desc {
-            display: block;
+        .card-arrow {
+            color: #3b82f6;
+            font-size: 1.2rem;
+            align-self: flex-start;
+            position: relative;
+            z-index: 2;
+            animation: arrowMove 1.5s infinite ease-in-out;
         }
         
-        /* الأسهم المتحركة */
-        .click-indicator {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            color: #00b4d8;
-            animation: bounce 2s infinite;
-            opacity: 0.8;
-            z-index: 5;
+        .service-card:hover .card-arrow {
+            animation: arrowMoveHover 0.8s infinite ease-in-out;
         }
-        
-        .click-indicator::before {
-            content: '↓';
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        /* تحديد مواقع الأسهم لكل خدمة مدارية */
-        .orbital-service:nth-child(2) .click-indicator { bottom: -40px; right: 50%; transform: translateX(50%); }
-        .orbital-service:nth-child(3) .click-indicator { bottom: -40px; right: 50%; transform: translateX(50%); }
-        .orbital-service:nth-child(4) .click-indicator { bottom: -40px; right: 50%; transform: translateX(50%); }
-        .orbital-service:nth-child(5) .click-indicator { top: -40px; right: 50%; transform: translateX(50%) rotate(180deg); }
-        .orbital-service:nth-child(6) .click-indicator { top: -40px; right: 50%; transform: translateX(50%) rotate(180deg); }
-        .orbital-service:nth-child(7) .click-indicator { top: -40px; right: 50%; transform: translateX(50%) rotate(180deg); }
-        .orbital-service:nth-child(8) .click-indicator { top: -40px; right: 50%; transform: translateX(50%) rotate(180deg); }
-        .orbital-service:nth-child(9) .click-indicator { bottom: -40px; right: 50%; transform: translateX(50%); }
         
         .service-detail-panel {
             position: fixed;
@@ -1319,13 +1423,13 @@
             max-width: 800px;
             background: rgba(10, 15, 30, 0.95);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 180, 216, 0.3);
             border-radius: 20px;
             padding: 40px;
             z-index: 100;
             opacity: 0;
             transition: all 0.5s ease;
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 180, 216, 0.3);
         }
         
         .service-detail-panel.active {
@@ -1464,85 +1568,203 @@
             visibility: visible;
         }
         
+        /* تأثيرات الحركة */
         @keyframes float {
             0% {
-                transform: translateY(0px);
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -50px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
             }
             50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(50%);
-            }
-            40% {
-                transform: translateY(-10px) translateX(50%);
-            }
-            60% {
-                transform: translateY(-5px) translateX(50%);
-            }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.7);
+                opacity: 1;
+                transform: scale(1.05);
             }
             70% {
-                box-shadow: 0 0 0 20px rgba(0, 180, 216, 0);
+                transform: scale(0.9);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(0, 180, 216, 0);
+                opacity: 1;
+                transform: scale(1);
             }
         }
         
-        /* تأثيرات للهواتف */
+        @keyframes arrowMove {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-5px);
+            }
+        }
+        
+        @keyframes arrowMoveHover {
+            0%, 100% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(-10px);
+            }
+        }
+        
+        /* تأثيرات الظهور المختلفة للكروت */
+        .service-card.card-1 {
+            transform: translateX(-50px);
+            animation: slideInRight 0.8s ease forwards;
+            animation-delay: 0.8s;
+        }
+        
+        .service-card.card-2 {
+            transform: translateX(50px);
+            animation: slideInLeft 0.8s ease forwards;
+            animation-delay: 1s;
+        }
+        
+        .service-card.card-3 {
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 1.2s;
+        }
+        
+        .service-card.card-4 {
+            transform: translateY(-50px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 1.4s;
+        }
+        
+        .service-card.card-5 {
+            transform: scale(0.5);
+            animation: bounceIn 0.8s ease forwards;
+            animation-delay: 1.6s;
+        }
+        
+        .service-card.card-6 {
+            transform: rotate(10deg) scale(0.8);
+            animation: zoomIn 0.8s ease forwards;
+            animation-delay: 1.8s;
+        }
+        
+        /* تصميم متجاوب */
         @media (max-width: 768px) {
-            .services-orbital {
-                width: 100%;
-                height: 600px;
+            .services-title {
+                font-size: 2.2rem;
             }
             
-            .services-title {
-                font-size: 2.5rem;
+            .services-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+            
+            .services-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .central-service {
-                width: 150px;
-                height: 150px;
+                padding: 30px;
+                max-width: 250px;
             }
             
-            .orbital-service {
-                width: 120px;
-                height: 120px;
+            .central-icon {
+                font-size: 2.8rem;
+            }
+            
+            .central-title {
+                font-size: 1.3rem;
+            }
+            
+            .service-card {
+                padding: 25px;
             }
             
             .panel-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             
             .panel-image {
                 height: 200px;
             }
-            
-            .click-indicator {
-                width: 25px;
-                height: 25px;
-            }
-            
-            .click-indicator::before {
-                font-size: 20px;
-            }
         }
         
+        @media (max-width: 480px) {
+            .services-title {
+                font-size: 1.8rem;
+            }
+            
+            .services-container {
+                padding: 15px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .service-name {
+                font-size: 1.2rem;
+            }
+            
+            .panel-info h3 {
+                font-size: 1.6rem;
+            }
+            
+            .panel-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1820,21 +2042,21 @@ navLinks.forEach(link => {
         });
     </script>
 
-   <!-- قسم من نحن -->
-    <section id="about-us" class="py-20 overflow-hidden bg-[#f8fafc]">
+    <!-- قسم من نحن -->
+    <section id="about-us" class="py-16 md:py-24 overflow-hidden bg-[#fefefe]">
         <div class="container mx-auto px-4">
             <!-- العنوان الرئيسي -->
-            <div class="text-center mb-20 fade-in-up">
-                <h2 class="text-4xl md:text-6xl font-black mb-6 gradient-text">من نحن</h2>
-                <div class="w-32 h-2 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto rounded-full mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نحن رواد في عالم التبريد والتكييف، نقدم حلولاً مبتكرة تجمع بين الكفاءة العالية والتصميم العصري</p>
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-black mb-6 gradient-text">من نحن</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">شركة <span class="font-bold text-blue-600">إيرون كول</span> رائدة في مجال أنظمة التبريد والتكييف، نقدم حلولاً مبتكرة تجمع بين الكفاءة العالية والتصميم العصري</p>
             </div>
             
             <!-- المحتوى الرئيسي -->
-            <div class="flex flex-col lg:flex-row items-center gap-16 mb-24">
+            <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
                 <!-- النص -->
-                <div class="lg:w-1/2 fade-in-left">
-                    <h3 class="text-4xl font-bold mb-8 text-gray-800">إيرون كول: <span class="text-blue-600">الريادة</span> في عالم التبريد</h3>
+                <div class="lg:w-1/2 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">إيرون كول: <span class="text-blue-600">الريادة</span> في عالم التبريد</h3>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                         تأسست شركة <span class="font-bold text-blue-600">إيرون كول</span> عام 2008 بهدف تقديم حلول متكاملة في مجال التبريد والتكييف. على مدار 15 عاماً، رسخت الشركة مكانتها كرائدة في السوق بفضل التزامها بالجودة والابتكار والخدمة المتميزة.
                     </p>
@@ -1844,17 +2066,17 @@ navLinks.forEach(link => {
                     
                     <!-- الجدول الزمني -->
                     <div class="mt-12 space-y-8">
-                        <div class="timeline-item fade-in-left">
+                        <div class="timeline-item fade-in">
                             <h4 class="text-xl font-bold text-gray-800 mb-2">التأسيس والانطلاقة</h4>
                             <p class="text-gray-600">تأسيس الشركة وافتتاح أول فرع في القاهرة مع فريق مكون من 10 موظفين.</p>
                             <span class="text-blue-500 font-bold">2008</span>
                         </div>
-                        <div class="timeline-item fade-in-left">
+                        <div class="timeline-item fade-in">
                             <h4 class="text-xl font-bold text-gray-800 mb-2">التوسع الإقليمي</h4>
                             <p class="text-gray-600">افتتاح 5 فروع جديدة في محافظات مختلفة وتوسيع قاعدة العملاء.</p>
                             <span class="text-blue-500 font-bold">2012</span>
                         </div>
-                        <div class="timeline-item fade-in-left">
+                        <div class="timeline-item fade-in">
                             <h4 class="text-xl font-bold text-gray-800 mb-2">الريادة التكنولوجية</h4>
                             <p class="text-gray-600">إدخال أنظمة التكييف الذكية والحلول الموفرة للطاقة بنسبة 40%.</p>
                             <span class="text-blue-500 font-bold">2018</span>
@@ -1863,77 +2085,94 @@ navLinks.forEach(link => {
                 </div>
                 
                 <!-- الصورة والأيقونات -->
-                <div class="lg:w-1/2 relative fade-in-right">
+                <div class="lg:w-1/2 relative fade-in">
                     <!-- الصورة الرئيسية -->
-                    <div class="rounded-3xl overflow-hidden shadow-2xl floating">
+                    <div class="rounded-2xl overflow-hidden shadow-xl floating">
                         <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                              alt="أنظمة تكييف إيرون كول" class="w-full h-auto">
                     </div>
                     
                     <!-- الأيقونات العائمة -->
-                    <div class="absolute -top-6 -right-6 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl p-5 shadow-2xl icon-container floating">
-                        <i class="fas fa-snowflake text-white text-3xl pulse-icon"></i>
+                    <div class="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-lg icon-container floating border border-blue-100">
+                        <i class="fas fa-snowflake text-blue-500 text-2xl"></i>
                     </div>
-                    <div class="absolute -bottom-6 -left-6 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-5 shadow-2xl icon-container floating" style="animation-delay: 1s;">
-                        <i class="fas fa-leaf text-white text-3xl"></i>
+                    <div class="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg icon-container floating border border-green-100" style="animation-delay: 1s;">
+                        <i class="fas fa-leaf text-green-500 text-2xl"></i>
                     </div>
-                    <div class="absolute top-1/3 -right-10 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl p-5 shadow-2xl icon-container floating" style="animation-delay: 2s;">
-                        <i class="fas fa-award text-white text-3xl"></i>
-                    </div>
-                    <div class="absolute bottom-1/3 -left-10 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-5 shadow-2xl icon-container floating" style="animation-delay: 3s;">
-                        <i class="fas fa-bolt text-white text-3xl"></i>
+                    <div class="absolute top-1/3 -right-6 bg-white rounded-xl p-4 shadow-lg icon-container floating border border-yellow-100" style="animation-delay: 2s;">
+                        <i class="fas fa-award text-yellow-500 text-2xl"></i>
                     </div>
                 </div>
             </div>
             
-        
+       
             
             <!-- المميزات -->
             <div class="mb-16">
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in-up">
-                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 icon-container">
-                            <i class="fas fa-cogs text-white text-2xl"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="feature-card rounded-xl p-6 card-hover fade-in">
+                        <div class="flex items-start mb-4">
+                            <div class=" w-12 h-12 rounded-lg flex items-center justify-center ml-4 icon-container-1">
+                                <i class="fas fa-cogs text-blue-500 text-x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-x text-start font-bold text-gray-800">تقنيات متطورة</h4>
+                                <p class="text-gray-600 mt-2">نستخدم أحدث التقنيات في أنظمة التكييف الذكية التي توفر أفضل أداء مع توفير يصل إلى 50% في استهلاك الطاقة.</p>
+                            </div>
                         </div>
-                        <h4 class="text-xl font-bold mb-4 text-gray-800">تقنيات متطورة</h4>
-                        <p class="text-gray-600">نستخدم أحدث التقنيات في أنظمة التكييف الذكية التي توفر أفضل أداء مع توفير يصل إلى 50% في استهلاك الطاقة.</p>
+                       
                     </div>
                     
-                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in-up" style="transition-delay: 0.1s;">
-                        <div class="bg-gradient-to-r from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 icon-container">
-                            <i class="fas fa-headset text-white text-2xl"></i>
+                    <div class="feature-card rounded-xl p-6 card-hover fade-in">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center ml-4 icon-container-1">
+                                <i class="fas fa-headset text-green-500 text-x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-x font-bold text-start text-gray-800">دعم فني مستمر</h4>
+                                <p class="text-black mt-2">فريق الدعم الفني لدينا متاح 24/7 لتلبية احتياجاتكم وحل أي مشكلة تواجهكم مع ضمان استجابة فورية.</p>
+                            </div>
                         </div>
-                        <h4 class="text-xl font-bold mb-4 text-gray-800">دعم فني مستمر</h4>
-                        <p class="text-gray-600">فريق الدعم الفني لدينا متاح 24/7 لتلبية احتياجاتكم وحل أي مشكلة تواجهكم مع ضمان استجابة فورية.</p>
+                        
                     </div>
                     
-                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in-up" style="transition-delay: 0.2s;">
-                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 icon-container">
-                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    <div class="feature-card rounded-xl p-6 card-hover fade-in">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-50 w-12 h-12 rounded-lg flex items-center justify-center ml-4 icon-container-1">
+                                <i class="fas fa-shield-alt text-purple-500 text-x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-x text-start font-bold text-gray-800">ضمان الجودة</h4>
+                                <p class="text-gray-600 mt-2">نقدم ضماناً ممتداً على جميع منتجاتنا وخدماتنا لضمان رضاكم التام وثقتكم الدائمة بنا.</p>
+                            </div>
                         </div>
-                        <h4 class="text-xl font-bold mb-4 text-gray-800">ضمان الجودة</h4>
-                        <p class="text-gray-600">نقدم ضماناً ممتداً على جميع منتجاتنا وخدماتنا لضمان رضاكم التام وثقتكم الدائمة بنا.</p>
+                      
                     </div>
                     
-                    <div class="bg-white rounded-2xl p-8 shadow-lg card-hover fade-in-up" style="transition-delay: 0.3s;">
-                        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 icon-container">
-                            <i class="fas fa-tools text-white text-2xl"></i>
+                    <div class="feature-card rounded-xl p-6 card-hover fade-in">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-yellow-50 w-12 h-12 rounded-lg flex items-center justify-center ml-4 icon-container-1">
+                                <i class="fas fa-tools text-yellow-500 text-x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-x text-start font-bold text-gray-800">صيانة شاملة</h4>
+                                <p class="text-gray-600 mt-2">خدمات الصيانة الدورية والشاملة التي تضمن استمرارية عمل الأنظمة بكفاءة عالية وإطالة عمرها الافتراضي.</p>
+                            </div>
                         </div>
-                        <h4 class="text-xl font-bold mb-4 text-gray-800">صيانة شاملة</h4>
-                        <p class="text-gray-600">خدمات الصيانة الدورية والشاملة التي تضمن استمرارية عمل الأنظمة بكفاءة عالية وإطالة عمرها الافتراضي.</p>
+                      
                     </div>
                 </div>
             </div>
             
-         
+          
         </div>
     </section>
 
     <script>
         // تأثير الظهور التدريجي عند التمرير
         document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+            const fadeElements = document.querySelectorAll('.fade-in');
             
             const fadeInOnScroll = function() {
                 fadeElements.forEach(element => {
@@ -1953,7 +2192,7 @@ navLinks.forEach(link => {
             window.addEventListener('scroll', fadeInOnScroll);
             
             // عدادات متحركة للإحصائيات
-            const counters = document.querySelectorAll('.text-4xl.font-black');
+            const counters = document.querySelectorAll('.text-3xl.font-black');
             let animated = false;
             
             const animateCounters = () => {
@@ -1998,77 +2237,103 @@ navLinks.forEach(link => {
             document.getElementById('projects-count').setAttribute('data-target', '1200');
             document.getElementById('clients-count').setAttribute('data-target', '8500');
             document.getElementById('branches-count').setAttribute('data-target', '25');
-            
-            // تأثيرات إضافية للأيقونات
-            const icons = document.querySelectorAll('.icon-container');
-            icons.forEach(icon => {
-                icon.addEventListener('mouseenter', function() {
-                    this.style.transform = 'rotateY(180deg) scale(1.1)';
-                });
-                
-                icon.addEventListener('mouseleave', function() {
-                    this.style.transform = 'rotateY(0deg) scale(1)';
-                });
-            });
         });
     </script>
 
-   <!-- قسم الخدمات -->
+  <!-- قسم الخدمات -->
     <section class="services-hero" id="services">
         <div class="hexagon-grid"></div>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
         
         <div class="services-container">
-            <h1 class="services-title">نظام خدماتنا المداري</h1>
-            <p class="services-subtitle">اكتشف عالم خدمات التكييف المتكاملة من خلال نظامنا المداري التفاعلي. اختر الخدمة لمعرفة التفاصيل</p>
+            <h1 class="services-title">خدماتنا المتكاملة</h1>
+            <p class="services-subtitle">اكتشف عالم خدمات التكييف المتكاملة من شركة إيرون كول. اختر الخدمة لمعرفة التفاصيل الكاملة</p>
             
-            <div class="services-orbital">
+            <div class="services-grid">
+                <!-- الصف الأول من الخدمات -->
+                <div class="services-row">
+                    <div class="service-card card-1" onclick="openService('maintenance')">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="service-name">الصيانة الدورية</h3>
+                        <p class="service-desc">ضمان كفاءة وأداء مثالي لأنظمة التكييف مع صيانة دورية شاملة</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-2" onclick="openService('repair')">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="service-name">إصلاح الأعطال</h3>
+                        <p class="service-desc">حلول سريعة واحترافية لإصلاح جميع أنواع الأعطال في أنظمة التكييف</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- الخدمة المركزية -->
-                <div class="central-service pulse" onclick="openService('central')">
+                <div class="central-service" onclick="openService('central')">
                     <div class="central-icon">❄</div>
                     <div class="central-title">ايرون كول</div>
                 </div>
                 
-                <!-- الخدمات المدارية -->
-                <div class="orbital-service" onclick="openService('maintenance')">
-                    <div class="service-icon"><i class="fas fa-tools"></i></div>
-                    <div class="service-name">الصيانة الدورية</div>
-                    <div class="service-desc">ضمان كفاءة وأداء مثالي</div>
-                    <div class="click-indicator"></div>
+                <!-- الصف الثاني من الخدمات -->
+                <div class="services-row">
+                    <div class="service-card card-3" onclick="openService('installation')">
+                        <div class="service-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h3 class="service-name">تركيب المكيفات</h3>
+                        <p class="service-desc">تركيب دقيق واحترافي لأنظمة التكييف المختلفة وفق أعلى المعايير</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-4" onclick="openService('emergency')">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="service-name">خدمات الطوارئ</h3>
+                        <p class="service-desc">خدمة 24/7 على مدار الساعة لمعالجة الأعطال المفاجئة في أي وقت</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="orbital-service" onclick="openService('repair')">
-                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
-                    <div class="service-name">إصلاح الأعطال</div>
-                    <div class="service-desc">حلول سريعة واحترافية</div>
-                    <div class="click-indicator"></div>
-                </div>
-                
-                <div class="orbital-service" onclick="openService('installation')">
-                    <div class="service-icon"><i class="fas fa-snowflake"></i></div>
-                    <div class="service-name">تركيب المكيفات</div>
-                    <div class="service-desc">تركيب دقيق واحترافي</div>
-                    <div class="click-indicator"></div>
-                </div>
-                
-                <div class="orbital-service" onclick="openService('emergency')">
-                    <div class="service-icon"><i class="fas fa-clock"></i></div>
-                    <div class="service-name">خدمات الطوارئ</div>
-                    <div class="service-desc">خدمة 24/7 على مدار الساعة</div>
-                    <div class="click-indicator"></div>
-                </div>
-                
-                <div class="orbital-service" onclick="openService('cleaning')">
-                    <div class="service-icon"><i class="fas fa-spray-can"></i></div>
-                    <div class="service-name">تنظيف المكيفات</div>
-                    <div class="service-desc">تنظيف عميق وتعقيم شامل</div>
-                    <div class="click-indicator"></div>
-                </div>
-                
-                <div class="orbital-service" onclick="openService('consultation')">
-                    <div class="service-icon"><i class="fas fa-user-cog"></i></div>
-                    <div class="service-name">استشارات فنية</div>
-                    <div class="service-desc">حلول مخصصة واحترافية</div>
-                    <div class="click-indicator"></div>
+                <!-- الصف الثالث من الخدمات -->
+                <div class="services-row">
+                    <div class="service-card card-5" onclick="openService('cleaning')">
+                        <div class="service-icon">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <h3 class="service-name">تنظيف المكيفات</h3>
+                        <p class="service-desc">تنظيف عميق وتعقيم شامل للمكيفات لتحسين جودة الهواء والكفاءة</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-6" onclick="openService('consultation')">
+                        <div class="service-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h3 class="service-name">استشارات فنية</h3>
+                        <p class="service-desc">حلول مخصصة واحترافية لاختيار أنظمة التكييف المناسبة لاحتياجاتك</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2379,92 +2644,7 @@ navLinks.forEach(link => {
 
        
     </script>
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2>تواصل معنا</h2>
-                    <p>نحن هنا لخدمتك. تواصل معنا عبر أي من الوسائل التالية</p>
-                    
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>العنوان</h4>
-                                <p>الرياض، المملكة العربية السعودية</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>الهاتف</h4>
-                                <p dir="ltr">+966 50 000 0000</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>البريد الإلكتروني</h4>
-                                <p>info@ironcool.sa</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>ساعات العمل</h4>
-                                <p>متاحون 24/7 - طوال الأسبوع</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <h3>أرسل لنا رسالة</h3>
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="الاسم الكامل" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service" required>
-                                <option value="">اختر نوع الخدمة</option>
-                                <option value="maintenance">صيانة دورية</option>
-                                <option value="repair">إصلاح أعطال</option>
-                                <option value="installation">تركيب جديد</option>
-                                <option value="cleaning">تنظيف وتعقيم</option>
-                                <option value="freon">شحن فريون</option>
-                                <option value="emergency">طوارئ</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" placeholder="رسالتك" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-secondary btn-full">
-                            <i class="fas fa-paper-plane"></i>
-                            إرسال الرسالة
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
      
     <!-- Footer -->
@@ -2622,15 +2802,7 @@ navLinks.forEach(link => {
         });
     </script>
 
-    <!-- Video Modal -->
-    <div class="video-modal" id="videoModal">
-        <div class="video-modal-content">
-            <button class="close-modal" id="closeModal">&times;</button>
-            <div class="video-wrapper">
-                <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Custom JavaScript -->
     <script src="./asstes/js/script.js"></script>
