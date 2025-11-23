@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./asstes/css/style.css">
+    <link rel="stylesheet" href="./asstes/css/style.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -1430,6 +1430,10 @@
             transition: all 0.5s ease;
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
             border: 1px solid rgba(0, 180, 216, 0.3);
+            max-height: 90vh;     /* ارتفاع مناسب للشاشة */
+             overflow-y: auto; 
+             margin-top: 35px;
+             margin-bottom: 30px;
         }
         
         .service-detail-panel.active {
@@ -1463,7 +1467,7 @@
         
         .panel-image {
             width: 100%;
-            height: 300px;
+            height: 350px;
             border-radius: 15px;
             overflow: hidden;
         }
@@ -1687,6 +1691,7 @@
         
         /* تصميم متجاوب */
         @media (max-width: 768px) {
+            
             .services-title {
                 font-size: 2.2rem;
             }
@@ -1727,6 +1732,7 @@
                 height: 200px;
             }
         }
+        
         
         @media (max-width: 480px) {
             .services-title {
@@ -2246,11 +2252,15 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <!-- Logo -->
-                <div class="logo">
-                    <i class="fas fa-snowflake"></i>
-                    <span class="logo-text">ايرون كول</span>
-                </div>
+             <div class="flex items-center gap-3">
+                <img 
+                    src="./asstes/img/logo.webp" 
+                    alt="logo" 
+                    class="w-12 h-12 rounded-full object-cover "
+                >
+                <h1 class="text-xl font-bold text-white">ايرون كول</h1>
+            </div>
+
                 
                 <!-- Mobile Menu Toggle -->
                 <a class="mobile-menu-toggle" aria-label="القائمة">
@@ -2270,7 +2280,7 @@
                 </ul>
                 
                 <!-- CTA Button -->
-                <a href="#estimate" class="btn btn-primary">احصل على تقدير مجاني</a>
+                <a href="#estimate" class="btn btn-primary">  تواصل معنا  </a>
             </nav>
         </div>
     </header>
@@ -2542,7 +2552,7 @@ navLinks.forEach(link => {
                     <div class="mt-12 space-y-8">
                         <div class="timeline-item fade-in">
                             <h4 class="text-xl font-bold text-gray-800 mb-2">التأسيس والانطلاقة</h4>
-                            <p class="text-gray-600">تأسيس الشركة وافتتاح أول فرع في القاهرة مع فريق مكون من 10 موظفين.</p>
+                            <p class="text-gray-600">تأسيس الشركة وافتتاح أول فرع في الرياض مع فريق مكون من 10 موظفين.</p>
                             <span class="text-blue-500 font-bold">2008</span>
                         </div>
                         <div class="timeline-item fade-in">
@@ -2562,7 +2572,7 @@ navLinks.forEach(link => {
                 <div class="lg:w-1/2 relative fade-in">
                     <!-- الصورة الرئيسية -->
                     <div class="rounded-2xl overflow-hidden shadow-xl floating">
-                        <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                        <img src="./asstes/img/logo.webp" 
                              alt="أنظمة تكييف إيرون كول" class="w-full h-auto">
                     </div>
                     
@@ -2742,12 +2752,15 @@ navLinks.forEach(link => {
                         </div>
                     </div>
                     
-                    <div class="service-card card-2" onclick="openService('repair')">
+                    <div class="service-card card-2" onclick="openService('Freon')">
                         <div class="service-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h3 class="service-name">إصلاح الأعطال</h3>
-                        <p class="service-desc">حلول سريعة واحترافية لإصلاح جميع أنواع الأعطال في أنظمة التكييف</p>
+                      <h3 class="service-name">شحن الفريون</h3>
+                        <p class="service-desc">
+                            خدمة متخصصة لفحص مستوى الفريون وشحنه بأنواعه المختلفة لضمان أقصى كفاءة تبريد للمكيف.
+                        </p>
+
                         <div class="card-arrow">
                             <i class="fas fa-arrow-left"></i>
                         </div>
@@ -2766,7 +2779,7 @@ navLinks.forEach(link => {
                         <div class="service-icon">
                             <i class="fas fa-snowflake"></i>
                         </div>
-                        <h3 class="service-name">تركيب المكيفات</h3>
+                        <h3 class="service-name"> تركيب المكيفات</h3>
                         <p class="service-desc">تركيب دقيق واحترافي لأنظمة التكييف المختلفة وفق أعلى المعايير</p>
                         <div class="card-arrow">
                             <i class="fas fa-arrow-left"></i>
@@ -2777,11 +2790,14 @@ navLinks.forEach(link => {
                         <div class="service-icon">
                             <i class="fas fa-clock"></i>
                         </div>
-                        <h3 class="service-name">خدمات الطوارئ</h3>
-                        <p class="service-desc">خدمة 24/7 على مدار الساعة لمعالجة الأعطال المفاجئة في أي وقت</p>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-left"></i>
-                        </div>
+                        <h3 class="service-name">فك ونقل المكيفات</h3>
+                            <p class="service-desc">
+                                خدمة متخصصة لفك المكيفات بأمان ونقلها لأي موقع جديد بدون فقدان الفريون، مع الحفاظ الكامل على المواسير والوحدات.
+                            </p>
+                            <div class="card-arrow">
+                                <i class="fas fa-arrow-left"></i>
+                            </div>
+
                     </div>
                 </div>
                 
@@ -2802,11 +2818,14 @@ navLinks.forEach(link => {
                         <div class="service-icon">
                             <i class="fas fa-user-cog"></i>
                         </div>
-                        <h3 class="service-name">استشارات فنية</h3>
-                        <p class="service-desc">حلول مخصصة واحترافية لاختيار أنظمة التكييف المناسبة لاحتياجاتك</p>
+                       <h3 class="service-name">تمديد النحاس للمكيفات</h3>
+                        <p class="service-desc">
+                            خدمة احترافية لتمديد مواسير النحاس بأمان وجودة عالية، مع التأكد من التوصيل الصحيح ومنع أي تسرب للغاز لضمان أفضل أداء للتبريد.
+                        </p>
                         <div class="card-arrow">
                             <i class="fas fa-arrow-left"></i>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -2819,7 +2838,7 @@ navLinks.forEach(link => {
             </button>
             <div class="panel-content">
                 <div class="panel-image">
-                    <img id="panelImage" src="./asstes/img/air-conditioning-maintenance.png" alt="خدمة">
+                    <img id="panelImage" src="./asstes/img/air-conditioning-maintenance.png" class="" alt="خدمة">
                 </div>
                 <div class="panel-info">
                     <h3 id="panelTitle">الصيانة الدورية</h3>
@@ -2871,23 +2890,24 @@ navLinks.forEach(link => {
                     "فحص الدوائر الكهربائية"
                 ]
             },
-         repair: {
-                title: "فك وتركيب المكيفات",
-                description: "خدمة احترافية لفك المكيفات ونقلها وتركيبها في الموقع الجديد مع ضمان الحفاظ على الغاز وسلامة المواسير والوصلات. نستخدم أدوات متخصصة لضمان تركيب آمن وكفاءة تبريد عالية.",
-                image: "https://images.unsplash.com/photo-1597007250037-91e1e7e9cc7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                features: [
-                    "فك آمن بدون تسريب فريون",
-                    "نقل المكيف لأي موقع داخل المنزل أو الشركة",
-                    "تركيب احترافي مع فحص المواسير والوصلات",
-                    "ضبط الثبات وضمان أفضل مكان للتبريد",
-                    "إعادة تشغيل وفحص الأداء بعد التركيب"
-                ]
+         installation: {
+              title: "تركيب المكيفات",
+            description: "خدمة احترافية لتركيب جميع أنواع المكيفات مع ضمان أعلى مستوى من الدقة والأمان. نستخدم أحدث الأدوات لفحص المواسير، تثبيت الوحدة الداخلية والخارجية بشكل مثالي، وضبط التبريد لتحقيق أفضل أداء ممكن.",
+            image: "./asstes/img/air-conditioning-installation.png",
+            features: [
+                "تركيب احترافي لجميع أنواع المكيفات",
+                "تحديد أفضل مكان للوحدة الداخلية والخارجية لضمان تبريد مثالي",
+                "فحص المواسير والوصلات والتأكد من عدم وجود أي تسريب",
+                "تثبيت آمن للوحدات مع عزل الاهتزازات",
+                "تشغيل تجريبي شامل للتأكد من كفاءة التبريد"
+            ]
+
             },
 
-          installation: {
+          Freon: {
                     title: "شحن فريون المكيفات",
                     description: "خدمة شحن فريون دقيقة باستخدام أحدث العدّادات وأنواع الغازات المعتمدة لضمان تبريد قوي واستهلاك أقل للطاقة. نقوم بفحص شامل قبل الشحن للتأكد من عدم وجود أي تسريبات.",
-                    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                    image: "./asstes/img/freon-charging.png",
                     features: [
                         "فحص مستوى الفريون بدقة",
                         "الكشف عن تسريب الغاز وإصلاحه",
@@ -2900,7 +2920,7 @@ navLinks.forEach(link => {
           emergency: {
     title: "فك ونقل المكيفات",
     description: "خدمة متخصصة لفك المكيفات ونقلها وتركيبها في موقع جديد بكل احترافية. نضمن الحفاظ على الفريون وسلامة المواسير بالإضافة إلى تركيب آمن يمنحك أفضل أداء للتبريد.",
-    image: "https://images.unsplash.com/photo-1581579188871-45ea61fcd93e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "./asstes/img/dismantling-and-moving-air-conditioners.png",
     features: [
         "فك آمن بدون فقدان الفريون",
         "نقل المكيف لأي موقع داخل المنزل أو الشركة",
@@ -2922,15 +2942,17 @@ navLinks.forEach(link => {
                 ]
             },
             consultation: {
-                title: "استشارات فنية",
-                description: "تقديم استشارات فنية متخصصة لاختيار أنظمة التكييف المناسبة وتصميم الحلول المثلى لتلبية احتياجاتكم بتكلفة مناسبة. خبراؤنا جاهزون لتقديم النصح والإرشاد.",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+              title: "تمديد النحاس للمكيفات",
+                description: "خدمة احترافية لتمديد مواسير النحاس للمكيفات بجودة عالية، مع التأكد من التوصيل السليم ومنع أي تسرب للغاز، لضمان أفضل أداء وكفاءة للتبريد.",
+                image: "./asstes/img/copper-extension.png",
                 features: [
-                    "دراسة احتياجات التبريد",
-                    "تقديم حلول موفرة للطاقة",
-                    "تصميم أنظمة التكييف المركزية",
-                    "استشارات التحديث والتطوير"
+                    "تمديد مواسير النحاس بدقة وبدون تسريب",
+                    "توصيل آمن للوحدات الداخلية والخارجية",
+                    "ضبط الميل والتثبيت لضمان تدفق الغاز بشكل مثالي",
+                    "التأكد من عزل المواسير وحمايتها من الاهتزازات",
+                    "فحص شامل بعد التركيب لضمان الأداء المثالي"
                 ]
+
             }
         };
 
@@ -3272,10 +3294,14 @@ navLinks.forEach(link => {
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <div class="footer-logo">
-                        <i class="fas fa-snowflake"></i>
-                        <span>ايرون كول</span>
-                    </div>
+                   <div class="flex items-center gap-3">
+                <img 
+                    src="./asstes/img/logo.webp" 
+                    alt="logo" 
+                    class="w-12 h-12 rounded-full object-cover "
+                >
+                <h1 class="text-xl font-bold text-white">ايرون كول</h1>
+            </div>
                     <p>شركة رائدة في تقديم خدمات التكييف في الرياض. نلتزم بتقديم أعلى مستويات الجودة والاحترافية لضمان راحة عملائنا في جميع الأوقات. نحن نقدم حلولاً متكاملة لأنظمة التكييف والتبريد.</p>
                     <div class="social-links">
                         <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
